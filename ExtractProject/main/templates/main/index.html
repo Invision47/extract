@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Главная страница</h1>
+    {% if tasks %}
+        {% for el in tasks %}
+            <table border="4", width="100%", cellpadding="5", cols="2" >
+                <tr>
+                    <td>{{ el.title }}</td>
+                    <td>{{ el.task }}</td>
+                </tr>
+            </table>
+        {% endfor %}
+    {% else %}
+        <p>У нас нет записей!</p>
+    {% endif %}
+{% endblock %}
+
+
+
+
+
